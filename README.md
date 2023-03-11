@@ -1,2 +1,7 @@
-# bioLab
-![Image text]([https://github.com/zzuljs/CppLearning/blob/master/CppLearning/raw/master/Itachi.jpg](https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg))
+# bioLab fue creado por Gerbaudo Leandro como PROYECTO FINAL para el curso REACT JS (Comisión 51180 de CODER HOUSE)
+
+Imagen actual del proyecto en su etapa 1:
+
+![Image text](https://github.com/bruss86/bioLab/blob/master/src/assets/images/Fondo.png)
+
+
