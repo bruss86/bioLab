@@ -10,7 +10,7 @@ function App() {
         <NavBar />
       </div>
       <div className="container-propio">
-        <ItemListContainer greeting="Bienvenido a la tienda de Laboratorio" />
+        <ItemListContainer greeting="Bienvenido a la tienda de los Laboratorios" />
       </div>
     </>
   );

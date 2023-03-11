@@ -4,7 +4,10 @@ import CartWidget from "../CartWidget";
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fs-4">
+      <nav
+        className="navbar navbar-expand-lg navbar-light fs-4"
+        style={{ backgroundColor: " #6b94b9 " }}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src={logo} alt="" width="60" height="48" />
