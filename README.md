@@ -2,6 +2,6 @@
 
 Imagen actual del proyecto en su etapa 1:
 
-![Image text](https://github.com/bruss86/bioLab/blob/master/src/assets/images/Fondo.png)
+![Image text](https://github.com/bruss86/bioLab/blob/master/public/assets/Animation.gif)
 
 
