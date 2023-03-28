@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Agitador Magnético Digital con calentamiento",
+      "description": "Control de temperatura digital con máx. temperatura hasta 280 ° C",
+      "manufacturer": "DLAB",
+      "price": 2500,
+      "category": "agitadores y mezcladores",
+      "image_url": "../public/assets/images/agitador_magnetico.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Vórtex",
+      "description": "Opera en un amplio rango de velocidades: 0-3000 rpm/min. ",
+      "manufacturer": "DLAB",
+      "price": 1500,
+      "category": "agitadores y mezcladores",
+      "image_url": "../public/assets/images/agitador_vortex.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Agitador de hélice",
+      "description": "Display digital de velocidad y tiempo de agitación",
+      "manufacturer": "DLAB",
+      "price": 390,
+      "category": "agitadores y mezcladores",
+      "image_url": "../public/assets/images/agitador_de_helice.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Agitador Rocker",
+      "description": "Tipo de Motor: Motor DC, libre de mantenimiento",
+      "manufacturer": "DLAB",
+      "price": 5000,
+      "category": "agitadores y mezcladores",
+      "image_url": "../public/assets/images/agitador_rocker.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Agitador para Microplaca",
+        "description": "Agitador para Microplacas Dlab",
+        "manufacturer": "DLAB",
+        "price": 1000.0,
+        "category": "agitadores y mezcladores",
+        "image_url": "../public/assets/images/agitador_microplacas.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Mini Centrifuga",
+      "description": "- Capacidad: 8 x 0.2 / 0.5 / 1.5 / 2.0 ml / 16 x 0.2ml",
+      "manufacturer": "DLAB",
+      "price": 2000.0,
+      "category": "centrifugas y concentradores",
+      "image_url": "../public/assets/images/Mini_centrifuga.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Concentrador Eppendorf",
+      "description": "El Eppendorf Concentrator plus fue desarrollado para la concentración, secado y purificación de muestras hasta máx. 240 ml.",
+      "manufacturer": "DLAB",
+      "price": 4000.0,
+      "category": "centrifugas y concentradores",
+      "image_url": "../public/assets/images/Concentrador_eppendorf.jpg"
+    },
+    {
+      "id": 8,
+      "name": "BioLis",
+      "description": "Software desarrollado para la gestión de laboratorios de análisis clínicos, veterinarios y de alimentos.",
+      "manufacturer": "BioLab",
+      "price": 500.0,
+      "category": "software",
+      "image_url": "../public/assets/images/software.jpg"
+    }
+      
+]

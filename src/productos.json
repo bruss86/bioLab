@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "name": "Agitador Magnético Digital con calentamiento Dlab, doble LED, hasta 280 C",
+      "description": "• Control de temperatura digital con máx. temperatura hasta 280 ° C",
+      "manufacturer": "DLAB",
+      "price": 2500,
+      "category": "Agitadores y mezcladores",
+      "image_url": "../agitador_magnetico.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Vórtex Dlab, velocidad ajustable",
+      "description": " Opera en un amplio rango de velocidades: 0-3000 rpm/min. ",
+      "manufacturer": "DLAB",
+      "price": 1500,
+      "category": "Agitadores y mezcladores",
+      "image_url": "../agitador_vortex.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Agitador de hélice Dlab, Display LCD",
+      "description": "Frecuencia [Hz]: 50/60",
+      "manufacturer": "DLAB",
+      "price": 390,
+      "category": "Agitadores y mezcladores",
+      "image_url": "../agitador_de_helice.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Agitador Rocker Dlab, digital LCD, ángulo 9",
+      "description": "Tipo de Motor: Motor DC, libre de mantenimiento",
+      "manufacturer": "DLAB",
+      "price": 5000,
+      "category": "Agitadores y mezcladores",
+      "image_url": "../agitador_rocker.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Agitador para Microplacas Dlab",
+        "description": "Agitador para Microplacas Dlab",
+        "manufacturer": "Agitadores y mezcladores",
+        "price": 1000.0,
+        "category": "Agitadores y mezcladores",
+        "image_url": "../agitador_microplacas.jpg"
+      }
+]

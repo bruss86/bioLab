@@ -1,102 +1,75 @@
-import logo from "./assets/images/logo.png";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import CartWidget from "../CartWidget";
+import Logo from "./assets/images/icono32.png";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div>
-      <nav
-        className="navbar navbar-expand-lg navbar-light fs-4"
-        style={{ backgroundColor: " #6b94b9 " }}
-      >
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <img src={logo} alt="" width="60" height="48" />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item dropdown ">
-                <a className="nav-link dropdown-toggle" href="#" role="button">
-                  Productos
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li className="nav-item dropend">
-                    <a
-                      className="nav-link dropdown-toggle "
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Equipos de Laboratorio
-                    </a>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Agitadores y Mezcladores
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Centrífugas y Concentradores
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="nav-item dropend">
-                    <a
-                      className="nav-link dropdown-toggle "
-                      href="#"
-                      role="button"
-                    >
-                      Insumos y Consumibles
-                    </a>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Botellas y Bidones
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Consumibles
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Software
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contacto
-                </a>
-              </li>
-            </ul>
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+        <Container>
+          <Navbar.Brand href="/">
+            <img
+              alt="LOGO"
+              src={Logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+            {"  "}
+            BIOLAB
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Inicio</Nav.Link>
 
-            <CartWidget cantidad={0} />
-          </div>
-        </div>
-      </nav>
+              <NavDropdown
+                title="Productos"
+                id="basic-nav-dropdown"
+                menuVariant="dark" //color del menu desplegable secundario
+                drop="down" // "end" para ir a la derecha
+              >
+                <NavDropdown
+                  title="Insumos y consumibles"
+                  id="basic-nav-dropdown"
+                  menuVariant="dark" //color del menu desplegable secundario
+                  drop="end" // "end" para ir a la derecha
+                >
+                  <NavDropdown.Item href="/category/botellas_y_bidones">
+                    Botellas y Bidones
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/category/descartables">
+                    Descartables
+                  </NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown
+                  title="Equipos de Laboratorio"
+                  id="basic-nav-dropdown"
+                  menuVariant="dark" //color del menu desplegable secundario
+                  drop="end" // "end" para ir a la derecha
+                >
+                  <NavDropdown.Item href="/category/agitadores_y_mezcladores">
+                    Agitadores y Mezcladores
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/category/centrifugas_y_concentradores">
+                    Centrífugas y Concentradores
+                  </NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown.Item href="/category/software">
+                  Software
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="/contact">Contacto</Nav.Link>
+            </Nav>
+            <Nav>
+              <CartWidget cantidad={0} />
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   );
 };
