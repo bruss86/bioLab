@@ -1,117 +1,70 @@
-import { useState, useEffect } from "react";
-import { Navigate, useParams } from "react-router-dom";
-import Styles from "./ItemDetailContainer.module.css";
+import ItemDetail from "../ItemDetail";
+import styles from "./itemdetailcontainer.module.css";
 import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import TextField from "@mui/material/TextField";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
+import { useCartContext } from "../../context/CartContext";
+import { collection, getDoc, doc } from "firebase/firestore";
+import { db } from "../../../DB/firebase-config";
+import { Link } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState({});
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [cantidad, setCantidad] = useState(0);
 
   const { id } = useParams();
 
-  const getProducts = async () => {
-    try {
-      const res = await fetch("../public/productos.json");
-      const data = await res.json();
-      productSelect(data, id);
-
-      //console.log("Productos", data);
-    } catch (error) {
-      setProducto(null);
-    }
-  };
-
-  const productSelect = (data, id) => {
-    if (id != undefined) {
-      const productoFiltrado = data.filter((producto) => producto.id == id);
-      setProducto(productoFiltrado);
+  const getProduct = async () => {
+    const docRef = doc(db, "products", id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      setProduct({ id: id, ...docSnap.data() });
       setLoading(false);
     } else {
-      setProducto(data);
+      // doc.data() will be undefined in this case
       setLoading(false);
+      setProduct(null);
     }
   };
 
   useEffect(() => {
-    getProducts();
+    getProduct();
   }, []);
 
   const carga = () => (
     <Box sx={{ display: "flex" }}>
-      <CircularProgress />
+      <CircularProgress size={80} />
     </Box>
   );
 
-  if (!producto) {
-    return <Navigate to="/404" />;
-  }
-
   if (loading) {
     //Si no se cargaron los productos (es null), muestra el spinner
-    return <div className={Styles.carga_container}>{carga()}</div>;
+    return <div className={styles.carga_container}>{carga()}</div>;
   }
 
-  const resta = () => {
-    const auxiliar = cantidad - 1;
-    if (auxiliar >= 0) {
-      setCantidad(auxiliar);
-    } else {
-      setCantidad(0);
-    }
-  };
+  if (!product) {
+    return (
+      <div className={styles.container}>
+        <h1>Producto no encontrado</h1>
+        <Button
+          variant="contained"
+          sx={{ mt: 2 }}
+          component={Link}
+          to={"/"}
+          color="success"
+          endIcon={<StorefrontIcon />}
+        >
+          VOLVER
+        </Button>
+      </div>
+    );
+  }
 
   return (
-    <div className={Styles.container}>
-      {producto.map((producto) => (
-        <div key={producto.id}>
-          <h2>{producto.name}</h2>
-          <img src={producto.image_url} alt={producto.name} />
-          <h3>
-            <b>Descripción:</b> {producto.description}
-          </h3>
-          <h3>
-            <b>Fabricante:</b> {producto.manufacturer}
-          </h3>
-          <h3>
-            <b>Precio (U$S):</b> {producto.price}
-          </h3>
-          <h3>
-            <b>Categoría:</b> {producto.category}
-          </h3>
-        </div>
-      ))}
-
-      <div>
-        <Button
-          variant="outlined"
-          size="large"
-          onClick={() => {
-            setCantidad(cantidad + 1);
-          }}
-        >
-          +
-        </Button>
-        <TextField
-          id="outlined-basic"
-          variant="outlined"
-          size="small"
-          type="text"
-          value={cantidad}
-          disabled={true}
-        />
-        <Button variant="outlined" size="large" onClick={resta}>
-          -
-        </Button>
-      </div>
-      <div>
-        <Button variant="contained" size="large" href="#">
-          Agregar al carrito
-        </Button>
-      </div>
+    <div className={styles.container}>
+      <ItemDetail product={product} />
     </div>
   );
 };

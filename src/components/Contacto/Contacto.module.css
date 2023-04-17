@@ -1,5 +1,7 @@
 .container{
     padding: 4rem;
-    margin: 4rem;
+    margin: auto;
     text-align: center;
+    width: 50%;
+    align-items: center;
 }
